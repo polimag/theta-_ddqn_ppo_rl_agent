@@ -197,7 +197,6 @@ class ThetaStarPlanner:
                     node = came_from[node]
                 path.append(np.array(s, dtype=np.float32))
                 path.reverse()
-                # добавляем финиш только если он достаточно далеко от последней точки
                 if self.h(tuple(path[-1]), g) > self.gs:
                     path.append(np.array(g, dtype=np.float32))
                 return path
