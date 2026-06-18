@@ -421,9 +421,9 @@ class ThetaStarTestEnv:
             goal = np.array([np.random.uniform(margin, H - margin),
                                W - margin - np.random.uniform(0, 15)], dtype=np.float32)
         else:
-        start = np.array([np.random.uniform(margin, H - margin),
+          start = np.array([np.random.uniform(margin, H - margin),
                                W - margin - np.random.uniform(0, 15)], dtype=np.float32)
-        goal = np.array([np.random.uniform(margin, H - margin),
+          goal = np.array([np.random.uniform(margin, H - margin),
                                margin + np.random.uniform(0, 15)], dtype=np.float32)
 
         # Генерация препятствий
