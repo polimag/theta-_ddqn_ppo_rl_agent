@@ -238,7 +238,6 @@ class ThetaStarPlanner:
 class TrainEnv:
 
     CTE_INIT_MIN = 0.0
-    CTE_INIT_MAX_CAP = 30.0
 
     def __init__(self):
         self.stp = 1.0
@@ -483,8 +482,8 @@ class ThetaStarTestEnv:
             start = np.array([np.random.uniform(margin, H - margin), margin + np.random.uniform(0, 15)], dtype=np.float32)
             goal = np.array([np.random.uniform(margin, H - margin), W - margin - np.random.uniform(0, 15)], dtype=np.float32)
         else:
-        start = np.array([np.random.uniform(margin, H - margin), W - margin - np.random.uniform(0, 15)], dtype=np.float32)
-        goal = np.array([np.random.uniform(margin, H - margin), margin + np.random.uniform(0, 15)], dtype=np.float32)
+          start = np.array([np.random.uniform(margin, H - margin), W - margin - np.random.uniform(0, 15)], dtype=np.float32)
+          goal = np.array([np.random.uniform(margin, H - margin), margin + np.random.uniform(0, 15)], dtype=np.float32)
 
         # Генерация препятствий
         self.obstacles = []
@@ -797,7 +796,6 @@ def run_training():
     print(f'Поле: {H}x{W} | Вход: {in_dim} числа | '
           f'Действий: {action_space_dim} | Эпизодов: {n_ep}')
     print(f'Старт: центр поля  |  Цель: случайная точка у края')
-    print(f'Curriculum CTE: 0..{TrainEnv.CTE_INIT_MAX_CAP} px за первые 150 эп.')
     print(f'Порог WP: {WP_THRESHOLD} px  |  '
           f'Визуализация каждые {vis_every_n_successes} успехов')
     print(f'Устройство: {device}')
